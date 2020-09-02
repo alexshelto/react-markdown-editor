@@ -1,0 +1,26 @@
+
+.InputWindow {
+
+  height: 500px;
+  width: 500px;
+  overflow: scroll;
+  float: left;
+  padding-left: 10px;
+}
+
+
+.input-text {
+  color: #fff;
+  background-color: #12110f;
+  resize: both;
+  overflow: scroll;
+  border: 1px solid black;
+}
+
+
+  
+p {
+  height: 200px;
+  width: 200px;
+
+}
