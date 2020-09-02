@@ -1,3 +1,34 @@
 .App {
   background-color: #27292e;
+  height: 600px;
+  width: 1000px;
+  margin: 0px auto;
+  padding: 5px;
+
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.left-container {
+  position: absolute;
+  left: 0px;
+  width:  48%;
+  padding: 10px;
+  height: 100%;
+}
+
+.right-container{
+  position: absolute;
+  right: 0px;
+  width: 48%;
+  padding: 10px;
+  height: 100%;
+
+}
+
+h4 {
+  color: #ffffff;
+  position: absolute;
+  margin-left: 5px;
 }

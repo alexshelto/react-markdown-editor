@@ -34,8 +34,14 @@ class App extends React.Component {
   render() {
     return(
       <div className="App">
-        <InputWindow value={this.state.inputText} onInputChange={this.onInputChange} />
-        <OutputWindow raw_markdown={this.state.inputText}/>
+        <div class="left-container">
+        <h4>Input</h4>
+          <InputWindow value={this.state.inputText} onInputChange={this.onInputChange} />
+          </div>
+        <div class="right-container">
+          <h4>Markdown</h4>
+          <OutputWindow raw_markdown={this.state.inputText}/>
+        </div>
       </div>
     )
   }

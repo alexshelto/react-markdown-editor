@@ -2,27 +2,30 @@
 .InputWindow {
   overflow: scroll;
   float: left;
-  padding: 10px;
+  margin-top: 35px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  margin-left: 10px;
+
 }
+
 
 
 .input-text {
   color: #fff;
   background-color:#27292e;
+  border: 1px solid black;
+
   resize: both;
   overflow: scroll;
-  border: 1px solid black;
-  /* min-height: 400px; */
 
-  text-align: start;
 
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 400px;
+  width: 90%;
+  height: 525px;
   border-radius: 4px;
-  padding: 1em;
+  padding: 1em;  
 }
-
 
   
 /* p {
