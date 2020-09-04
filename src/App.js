@@ -12,7 +12,7 @@ import OutputWindow from './OutputWindow';
 
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -22,25 +22,25 @@ class App extends React.Component {
       markdown: ''
     }
 
-   
+
   }
 
   onInputChange(e) {
-    this.setState({inputText: e});
+    this.setState({ inputText: e });
     console.log("Changed state to: " + this.state.inputText);
   }
 
 
   render() {
-    return(
+    return (
       <div className="App">
         <div class="left-container">
-        <h4>Input</h4>
+          <h4>Input</h4>
           <InputWindow value={this.state.inputText} onInputChange={this.onInputChange} />
-          </div>
+        </div>
         <div class="right-container">
           <h4>Markdown</h4>
-          <OutputWindow raw_markdown={this.state.inputText}/>
+          <OutputWindow raw_markdown={this.state.inputText} />
         </div>
       </div>
     )

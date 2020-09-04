@@ -11,17 +11,18 @@ import './InputWindow.css';
 
 
 
-function InputWindow(props){
+function InputWindow(props) {
 
 
-    return(
-      <div className="InputWindow">
-        <p>
-          <textarea class="input-text" placeholder="# Enter markdown here!" onChange={(e)=> {
-            props.onInputChange(e.target.value) }} />
-        </p>
-      </div>
-    );
+  return (
+    <div className="InputWindow">
+      <p>
+        <textarea class="input-text" placeholder="# Enter markdown here!" onChange={(e) => {
+          props.onInputChange(e.target.value)
+        }} />
+      </p>
+    </div>
+  );
 }
 
 
