@@ -20,7 +20,7 @@ class App extends React.Component {
     this.state = {
       inputText: '',
       markdown: '',
-      fileName: ''
+      fileName: 'data.json'
     }
 
 
@@ -35,17 +35,33 @@ class App extends React.Component {
     this.setState({fileName: e.target.value});
   }
 
-  downloadFile(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
+  // downloadFile(filename, text) {
+  //   if(this.state.inputText === ''){return;}
+  //   var element = document.createElement('a');
+  //   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  //   element.setAttribute('download', filename);
 
-    element.style.display = 'none';
+  //   element.style.display = 'none';
+  //   document.body.appendChild(element);
+
+  //   element.click();
+
+  //   document.body.removeChild(element);
+  // }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.downloadFile(this.state.fileName, this.state.inputText);
+  }
+
+  downloadFile = () => {
+    const element = document.createElement("a");
+    const file = new Blob([this.state.inputText],    
+                {type: 'text/plain;charset=utf-8'});
+    element.href = URL.createObjectURL(file);
+    element.download = this.state.fileName;
     document.body.appendChild(element);
-
     element.click();
-
-    document.body.removeChild(element);
   }
 
 
@@ -59,10 +75,10 @@ class App extends React.Component {
         <div class="right-container">
 
           <div className="download-box">
-          <form onsubmit={this.downloadFile(this.state.fileName, this.state.inputText)}>
-            <input type="text" name="name" value="file.md" onChange={(e) => { e.preventDefault(); this.onFileNameChange(e.target.value) }} />
-            <input type="submit" value="Download" />
-          </form>
+            <form onSubmit={this.downloadFile}>
+              <input type="text" name="name" value="README.md" />
+              <input type="submit" value="Download"/>
+            </form>
 
           </div>
           <h4>Markdown</h4>
