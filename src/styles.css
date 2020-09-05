@@ -13,22 +13,40 @@
 .left-container {
   position: absolute;
   left: 0px;
-  width:  48%;
+  width:  75vh;
   padding: 10px;
   height: 100%;
 }
+
+
 
 .right-container{
   position: absolute;
   right: 0px;
-  width: 48%;
+  width: 75vh;
   padding: 10px;
   height: 100%;
 
 }
+
+
+.download-box {
+  position: relative;
+  float: right;
+
+  /* padding-left: 4px; */
+}
+
+
 
 h4 {
   color: #ffffff;
   position: absolute;
   margin-left: 5px;
+}
+
+label {
+  font-size: 2.2vh;
+  padding: 5px 5px;
+
 }

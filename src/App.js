@@ -5,7 +5,7 @@
 
 
 import React from 'react';
-import './App.css';
+import './styles.css';
 import InputWindow from './InputWindow';
 import OutputWindow from './OutputWindow';
 
@@ -57,15 +57,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+
+       
+
         <div className="left-container">
-          <h4>Input</h4>
+            <h4>Input</h4>
           <InputWindow value={this.state.inputText} onInputChange={this.onInputChange} />
         </div>
+
         <div className="right-container">
 
           <div className="download-box">
             <form onSubmit={this.downloadFile}>
-              <input type="text" name="name" placeholder="README.md" onChange={(e) => {this.onFileNameChange(e);}} />
+            <label for="filename">Filename </label>
+              <input type="text" id="filename" name="name" placeholder="README.md" onChange={(e) => {this.onFileNameChange(e);}} />
               <input type="submit" value="Download"/>
             </form>
 
@@ -73,6 +78,9 @@ class App extends React.Component {
           <h4>Markdown</h4>
           <OutputWindow raw_markdown={this.state.inputText} />
         </div>
+
+        
+
       </div>
     )
   }

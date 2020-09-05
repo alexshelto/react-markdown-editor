@@ -1,26 +1,26 @@
-/* .OutputWindow {
-  overflow: scroll;
-  float: right;
-  padding-top: 50%;
-  width: 100%;
-} */
+
 
 .output-window {
   overflow: scroll;
   float: right;
-  padding-top: 50px;
+  padding-top: 10px;
+  margin-top: 50px;
+  position: relative;
+
+  margin-right: 10px;
+  height: 75vh;
+  width: 70vh;
+  border-radius: 4px;
+  padding: 1em;
 
 
 
   color: rgb(255, 255, 255);
   background-color: #363533;
   overflow: scroll;
-  border: 1px solid black;
+  border: 10px solid black;
 
-  margin-right: 10px;
-  margin-top: 50px;
-  height: 70%;
-  width: 90%;
-  border-radius: 4px;
-  padding: 1em;
+
+  /* resize: both; */
+
 }
