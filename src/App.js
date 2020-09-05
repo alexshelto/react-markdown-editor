@@ -17,10 +17,11 @@ class App extends React.Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.downloadFile = this.downloadFile.bind(this);
+    // this.downloadFile = this.downloadFile.bind(this)
     this.state = {
       inputText: '',
       markdown: '',
-      fileName: 'data.json'
+      fileName: ''
     }
 
 
@@ -33,25 +34,13 @@ class App extends React.Component {
 
   onFileNameChange(e){
     this.setState({fileName: e.target.value});
+    console.log(typeof(fileName));
   }
-
-  // downloadFile(filename, text) {
-  //   if(this.state.inputText === ''){return;}
-  //   var element = document.createElement('a');
-  //   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  //   element.setAttribute('download', filename);
-
-  //   element.style.display = 'none';
-  //   document.body.appendChild(element);
-
-  //   element.click();
-
-  //   document.body.removeChild(element);
-  // }
 
   handleSubmit(e){
     e.preventDefault();
     this.downloadFile(this.state.fileName, this.state.inputText);
+    console.log(this.state.inputText);
   }
 
   downloadFile = () => {
@@ -68,15 +57,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div class="left-container">
+        <div className="left-container">
           <h4>Input</h4>
           <InputWindow value={this.state.inputText} onInputChange={this.onInputChange} />
         </div>
-        <div class="right-container">
+        <div className="right-container">
 
           <div className="download-box">
             <form onSubmit={this.downloadFile}>
-              <input type="text" name="name" value="README.md" />
+              <input type="text" name="name" placeholder="README.md" onChange={(e) => {this.onFileNameChange(e);}} />
               <input type="submit" value="Download"/>
             </form>
 
